@@ -2,6 +2,7 @@ import express from "express";
 import handlebars from "express-handlebars";
 import __dirname from "./utils.js"; 
 import router from "./routes/views.router.js";
+import { Server } from "socket.io";
 
 
 const app = express()
@@ -27,7 +28,9 @@ app.set("views", __dirname + "/views")
 app.set("view engine", "handlebars")
 
 
-app.listen(8080, () =>{
+const httpServer = app.listen(8080, () =>{
     console.log("servidor funcionando en puerto 8080");
 
 })
+
+const socketServer = new Server (httpServer)
