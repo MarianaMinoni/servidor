@@ -1,4 +1,4 @@
-<div>
+{{!-- <div>
     <h1>Detalles usuario</h1>
 
 <p>Hola, {{user.name}} {{user.apellido}}!!!</p>
@@ -14,6 +14,26 @@
     <p>No tienes permisos para ver la lista</p>
     {{/if}}
 
+</div> --}}
+
+
+
+{{!-- chat --}}
+
+
+<div>
+    <form action="/chat" method="post"></form>
+<label for="nombre" >Nombre</label>
+    <input type="text" name="nombre">
+    <br>
+    <p>Mensajes</p>
+    <textarea></textarea>
+    <button type="submit">Enviar</button>
+</form>
 </div>
 
+
+
+
+<script src="/socket.io/socket.io.js"></script>
 <script src="/js/index.js"></script>

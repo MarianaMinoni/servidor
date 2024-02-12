@@ -89,4 +89,13 @@ router.post("/user", (req,res) =>{
 })
 
 
+router.get("/chat", (req,res) =>{
+    res.render("index")
+})
+
+router.post("/chat", (req,res) =>{
+
+})
+
+
 export default router;
