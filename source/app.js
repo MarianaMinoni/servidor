@@ -16,7 +16,7 @@ app.use("/", router)
 app.engine("handlebars", handlebars.engine()
 )
 
-//seteamos e manera estatica la carpeta public8
+//seteamos de manera estatica la carpeta public8
 app.use(express.static(__dirname + "/public"))
 
 // ahora con app.set(views, ruta) tenemos que decir en qué parte del proyecto van a estar las vistas
@@ -33,13 +33,22 @@ const httpServer = app.listen(8080, () =>{
 
 })
 
-const socketServer = new Server (httpServer)
+const socketServer = new Server (httpServer);
+
+const mssges = [];
 
 socketServer.on("connection", socket => {
     console.log("nuevo cliente conectado");
 
     socket.on("message", data =>{
+        mssges.push({userName : user, mssges : data});
         console.log(data);
+        socketServer.emit("message", data);
+        socketServer.emit("messages", mssges);
+
     })
+
+    socket.emit("messages", mssges);
+
 })
 

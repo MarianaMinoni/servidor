@@ -1,0 +1,20 @@
+
+
+{{!-- chat --}}
+
+
+<div>
+    <form action="/chat" method="post"></form>
+<label for="nombre" id="userName" >Nombre</label>
+    <input type="text" name="nombre">
+    <br>
+    <p>Mensajes</p>
+    <textarea id="messageInput"></textarea>
+    <button type="submit" id="sendMessageButton">Enviar</button>
+    <p id="broadcastMessage"></p>
+    <div id="messageContainer"></div>
+</form>
+</div>
+
+<script src="/socket.io/socket.io.js"></script>
+<script src="/js/index.js"></script>

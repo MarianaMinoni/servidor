@@ -90,7 +90,7 @@ router.post("/user", (req,res) =>{
 
 
 router.get("/chat", (req,res) =>{
-    res.render("index")
+    res.render("chat")
 })
 
 router.post("/chat", (req,res) =>{
